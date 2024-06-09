@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/EmailManagement
+/EmailClientCore/bin/Debug/net8.0
+/EmailClientCore/obj
+/EmailManagement.Common/bin/Debug/net8.0
+/EmailManagement.Common/obj
+/EmailManagement.ElasticService/bin/Debug/net8.0
+/EmailManagement.ElasticService/obj
+/EmailManagement.IMAP/bin/Debug/net8.0
+/EmailManagement.IMAP/obj
+/EmailManagement.Web/bin/Debug/net8.0
+/EmailManagement.Web/obj
+/EmailManagementAPI/bin/Debug/net8.0
+/EmailManagementAPI/obj

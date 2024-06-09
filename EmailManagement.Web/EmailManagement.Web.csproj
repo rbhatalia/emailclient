@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="8.0.6" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="3.1.12" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Quartz" Version="3.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmailManagement.Common\EmailManagement.Common.csproj" />
+    <ProjectReference Include="..\EmailManagement.ElasticService\EmailManagement.ElasticService.csproj" />
+    <ProjectReference Include="..\EmailManagement.IMAP\EmailManagement.IMAP.csproj" />
+  </ItemGroup>
+
+</Project>

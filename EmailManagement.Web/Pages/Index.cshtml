@@ -1,0 +1,25 @@
+﻿@page
+@model AddAccountModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h1>Connect Your Outlook Account</h1>
+
+<p>This application will access your Outlook emails and keep them synchronized.</p>
+
+<form method="post" asp-action="ConnectWithOutlook">
+    <input type="text" id="Id" />
+    <input type="text" id="Email" />
+    <input type="text" name="Username" />
+    <button type="submit">Connect with Outlook</button>
+</form>
+
+@if (Model?.Error != null)
+{
+    <div class="alert alert-danger">
+        @Model.Error
+    </div>
+}
+
+<div id="sync-status">
+</div>

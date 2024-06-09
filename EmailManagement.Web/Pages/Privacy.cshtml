@@ -1,0 +1,38 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "User Emails";
+}
+<h1>@ViewData["Title"]</h1>
+
+@section Scripts {
+    <script>
+        function updateData() {
+            fetch('/UserEmailController/GetUpdatedData?emailId=' + @ViewData["emailId"])
+                .then(response => response.json())
+                .then(data => {
+                    var htmlContent = "";
+
+                    for (var i = 0; i < data.length; i++) {
+                        var message = data[i];
+
+                        htmlContent += `
+                    <div class="message-container">
+                      <h3>Subject: ${message.subject}</h3>
+                      <p>From: ${message.senderName} &lt;${message.senderEmail}&gt;</p>
+                    </div>
+                  `;
+                    }
+
+                    document.getElementById('dataContainer').innerHTML = htmlContent;
+                })
+                .catch(error => console.error(error));
+        }
+
+        setInterval(updateData, 10000); // Call updateData every 10 seconds (10000 milliseconds)
+
+        window.onload = updateData; // Call updateData initially on page load
+    </script>
+}
+
+<div id="dataContainer"></div>
